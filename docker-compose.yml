@@ -1,0 +1,12 @@
+services:
+  ingestion_service:
+    build: ./ingestion_service
+    ports:
+      - "5000:5000"
+  notification_service:
+    build: ./notification_service
+    image: debian
+    ports:
+      - "3000:3000"
+  cascade:
+    build: ./cascade

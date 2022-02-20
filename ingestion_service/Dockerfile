@@ -1,0 +1,4 @@
+FROM debian
+WORKDIR /code
+EXPOSE 5000
+COPY . .
