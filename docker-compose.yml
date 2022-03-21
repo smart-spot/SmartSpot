@@ -1,8 +1,4 @@
 services:
-  ingestion_service:
-    build: ./ingestion_service
-    ports:
-      - "5000:5000"
   notification_service:
     build: ./notification_service
     image: debian
