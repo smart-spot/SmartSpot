@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+service Notification {
+  rpc CarAlert (CarNotification) returns (CarReply) {}
+}
+
+message CarNotification {
+  bytes image = 1;
+  string userName = 2;
+}
+
+message CarReply {
+  bool offendingCar = 1;
+}
