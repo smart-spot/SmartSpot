@@ -12,12 +12,12 @@ import (
 )
 
 type Email struct {
-	message string
-	subject string
+	Message string
+	Subject string
 }
 
 // init_dotenv initializes the dot environment
-func init_dotenv() {
+func initDotenv() {
 	err := godotenv.Load()
 	if err != nil {
 		log.Fatalf("Error loading .env file")
@@ -26,9 +26,9 @@ func init_dotenv() {
 
 // send_email sends an email from the Smart Spot email address to
 // za44@cornell.edu and tmb42@cornell.edu given a type Email object.
-func send_email(email Email) {
+func SendEmail(email Email) {
 	// initialize dot env for email and passwords
-	init_dotenv()
+	initDotenv()
 
 	// Sender data.
 	from := os.Getenv("SMTP_EMAIL")
@@ -45,8 +45,8 @@ func send_email(email Email) {
 	const smtpPort = "587"
 
 	// Message.
-	messageBytes := []byte("Subject: " + email.subject + "\r\n\r\n" +
-		email.message + "\r\n")
+	messageBytes := []byte("Subject: " + email.Subject + "\r\n\r\n" +
+		email.Message + "\r\n")
 
 	// Authentication.
 	auth := smtp.PlainAuth("", from, password, smtpHost)

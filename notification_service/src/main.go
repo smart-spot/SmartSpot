@@ -1,5 +1,7 @@
 package main
 
-func main() {
+import "notification_service/grpc"
 
+func main() {
+	grpc.Init()
 }
