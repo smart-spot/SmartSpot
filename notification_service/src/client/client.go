@@ -56,5 +56,5 @@ func main() {
 	client := pb.NewNotificationClient(conn)
 
 	// Looking for a valid feature
-	printCarReply(client, &pb.CarNotification{Image: encode_image(), UserName: "Tedi Mitiku"})
+	printCarReply(client, &pb.CarNotification{Image: encode_image(), UserName: "Tedi"})
 }
