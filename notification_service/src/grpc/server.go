@@ -38,7 +38,7 @@ func (s *notificationServer) CarAlert(ctx context.Context, car_notification *pb.
 
 	email_service.SendEmail(email_service.Email{
 		Subject: "Car Alert",
-		Message: "Endpoint hit.",
+		Message: "Car was detected in parking spot.",
 	})
 
 	return &pb.CarReply{}, nil
