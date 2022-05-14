@@ -7,6 +7,8 @@ import (
 	"log"
 	"net/smtp"
 	"os"
+	"strconv"
+	"time"
 
 	"github.com/joho/godotenv"
 )
@@ -46,7 +48,7 @@ func SendEmail(email Email) {
 
 	// Message.
 	messageBytes := []byte("Subject: " + email.Subject + "\r\n\r\n" +
-		email.Message + "\r\n")
+		email.Message + "\n" + "At Time: " + strconv.Itoa(int(time.Now().Unix())) + "\r\n")
 
 	// Authentication.
 	auth := smtp.PlainAuth("", from, password, smtpHost)
